@@ -14,34 +14,43 @@ from django.http import Http404
 from rest_framework import mixins
 from rest_framework import generics
 
+#GenericApi view lesson we can do below code in 2 line
+
+class ArticleList(generics.ListCreateAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+class ArticleDetails(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    lookup_field = "slug"
 # This is the view using mixinx
-class ArticleList(mixins.ListModelMixin,mixins.CreateModelMixin, generics.GenericAPIView):
+# class ArticleList(mixins.ListModelMixin,mixins.CreateModelMixin, generics.GenericAPIView):
 
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
 
-    def get(self,request,*args,**kwargs):
-        return self.list(request,*args,**kwargs)
+#     def get(self,request,*args,**kwargs):
+#         return self.list(request,*args,**kwargs)
     
-    def post(self, request, *args,**kwargs):
-        return self.create(request,*args,**kwargs)
+#     def post(self, request, *args,**kwargs):
+#         return self.create(request,*args,**kwargs)
     
 
-class ArticleDetails(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin,generics.GenericAPIView):
+# class ArticleDetails(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin,generics.GenericAPIView):
 
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
 
-    lookup_field = 'slug'
+#     lookup_field = 'slug'
 
-    def get(self,request,slug,*args,**kwargs):
-        return self.retrieve(request,slug = slug)
+#     def get(self,request,slug,*args,**kwargs):
+#         return self.retrieve(request,slug = slug)
     
-    def put(self,request,slug,*args,**kwags):
-        return self.update(request, slug = slug)
+#     def put(self,request,slug,*args,**kwags):
+#         return self.update(request, slug = slug)
     
-    def delete(self,request,slug):
-        return self.destroy(request, slug = slug)
+#     def delete(self,request,slug):
+#         return self.destroy(request, slug = slug)
 
 
 
