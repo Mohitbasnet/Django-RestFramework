@@ -13,16 +13,24 @@ from rest_framework.views import APIView
 from django.http import Http404
 from rest_framework import mixins
 from rest_framework import generics
+from rest_framework import viewsets
 
-#GenericApi view lesson we can do below code in 2 line
-
-class ArticleList(generics.ListCreateAPIView):
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
-class ArticleDetails(generics.RetrieveUpdateDestroyAPIView):
+class ArticleViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     lookup_field = "slug"
+
+    
+        
+
+#GenericApi view lesson we can do below code in 2 line
+# class ArticleList(generics.ListCreateAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+# class ArticleDetails(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+#     lookup_field = "slug"
 # This is the view using mixinx
 # class ArticleList(mixins.ListModelMixin,mixins.CreateModelMixin, generics.GenericAPIView):
 
