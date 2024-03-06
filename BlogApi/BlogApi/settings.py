@@ -40,7 +40,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'backend',
     'rest_framework.authtoken',
+    'rest_auth',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+
+
+    
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,8 +59,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+     # Downloaded Middleware
+    # 'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'BlogApi.urls'
@@ -82,6 +97,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCONT_ATUHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
 '''
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
