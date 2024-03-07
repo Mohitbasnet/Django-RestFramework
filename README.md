@@ -48,6 +48,24 @@ This is django restframework project in which different kind of article API are 
 - Python
 - Postgressql
 
+## Overview
+- Root API
+  
+![Screenshot 2024-03-07 155809](https://github.com/Mohitbasnet/Django-RestFramework/assets/118841933/2be7106d-288a-45cf-97e4-cdc6a06fc46b)
+
+- Article List
+  
+![Screenshot 2024-03-07 160151](https://github.com/Mohitbasnet/Django-RestFramework/assets/118841933/abe052a7-aa2f-43e3-a5db-b90d0969e30c)
+
+- Login Interface
+  
+![Screenshot 2024-03-07 160350](https://github.com/Mohitbasnet/Django-RestFramework/assets/118841933/7cac08bd-80f9-43fb-b52f-fbce630d9685)
+
+- Adding, Updating and deleting article
+![Screenshot 2024-03-07 160643](https://github.com/Mohitbasnet/Django-RestFramework/assets/118841933/8dccb696-22b6-4fe5-a4b8-7fd85dae34f8)
+![Screenshot 2024-03-07 160859](https://github.com/Mohitbasnet/Django-RestFramework/assets/118841933/d4e5fb7d-208a-4f92-bcef-40bf363bfe6b)
+![Screenshot 2024-03-07 160939](https://github.com/Mohitbasnet/Django-RestFramework/assets/118841933/f9e348d7-416d-4379-8b26-6e1db21e23cf)
+
 
 ## Contributing
 
