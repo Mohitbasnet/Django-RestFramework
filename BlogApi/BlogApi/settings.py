@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
 
-
+    'corsheaders',
     
 ]
 
@@ -57,17 +57,23 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoice.middleware.WhiteNoiceMiddleware'
+  'whitenoise.middleware.WhiteNoiseMiddleware',
+
+  
+    
 
      # Downloaded Middleware
     # 'allauth.account.middleware.AccountMiddleware',
 ]
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 ROOT_URLCONF = 'BlogApi.urls'
 
@@ -156,3 +162,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+   
+    "http://localhost:3000"
+    
+]
