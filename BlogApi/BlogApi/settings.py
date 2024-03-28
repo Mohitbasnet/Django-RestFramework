@@ -80,7 +80,9 @@ ROOT_URLCONF = 'BlogApi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+           
+        ],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,7 +109,7 @@ DATABASES = {
 }
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCONT_ATUHENTICATION_METHOD = 'username'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = False
 
 REST_FRAMEWORK = {
@@ -157,6 +159,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, 'frontend/build/static'),
+    # ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -164,7 +169,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-   
-    "http://localhost:3000"
-    
+'http://localhost:3000',
 ]
